@@ -19,7 +19,7 @@ public static class ArraySelector
         int indexList2 = 0;
 
         // foreach loop through the selector array
-        foreach (int i in select)
+        for (int i = 0; i < select.Length; i++)
         {
             // if the value is 1,
             if (select[i] == 1)
