@@ -12,7 +12,7 @@ public static class ArraySelector
     private static int[] ListSelector(int[] list1, int[] list2, int[] select)
     {
         // create results list
-        var results = new List<int>();
+        var results = new int[select.Length];
 
         // set indices for lists 1 & 2 to 0
         int indexList1 = 0;
@@ -25,12 +25,19 @@ public static class ArraySelector
             if (select[i] == 1)
             {
                 // add to the results the value at the current index for list1
+                results[i] = list1[indexList1];
                 // increment the index by 1
+                indexList1++;
             }
             // elif the value is 2,
-            //      add to the results the value at the current index for list2
-            //      increment the index by 1
+            else if (select[i] == 2)
+            {
+                // add to the results the value at the current index for list2
+                results[i] = list2[indexList2];
+                // increment the index by 1
+                indexList2++;
+            }
         }
-        return [];
+        return results;
     }
 }
