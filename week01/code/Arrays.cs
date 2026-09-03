@@ -13,6 +13,12 @@ public static class Arrays
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
 
+        // Create a double array with size 'length'
+        // Using a for loop, iterate from 1 to length - 1
+        //      multiply the number by the index and save the result as 'multiple'
+        //      add 'multiple' into the array
+        // Return the array
+
         return []; // replace this return statement with your own
     }
 
