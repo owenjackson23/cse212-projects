@@ -17,12 +17,13 @@ public static class Arrays
         var multiples = new double[length];
 
         // Using a for loop, iterate from 1 to length - 1
-        for (int multiplier = 1; multiplier < length; multiplier++)
+        for (int i = 0; i < length; i++)
         {
-            // multiply the number by the multiplier and save the result as 'multiple'
+            // multiply the number by the multiplier (i + 1) and save the result as 'multiple'
+            int multiplier = i + 1;
             double multiple = number * multiplier;
             // add 'multiple' into the array (index = multiplier - 1)
-            multiples[multiplier - 1] = multiplier;
+            multiples[i] = multiple;
         }
         // Return the array
         return multiples;
