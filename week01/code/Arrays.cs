@@ -14,12 +14,18 @@ public static class Arrays
         // be implemented by another person.
 
         // Create a double array with size 'length'
-        // Using a for loop, iterate from 1 to length - 1
-        //      multiply the number by the index and save the result as 'multiple'
-        //      add 'multiple' into the array
-        // Return the array
+        var multiples = new double[length];
 
-        return []; // replace this return statement with your own
+        // Using a for loop, iterate from 1 to length - 1
+        for (int multiplier = 1; multiplier < length; multiplier++)
+        {
+            // multiply the number by the multiplier and save the result as 'multiple'
+            double multiple = number * multiplier;
+            // add 'multiple' into the array (index = multiplier - 1)
+            multiples[multiplier - 1] = multiplier;
+        }
+        // Return the array
+        return multiples;
     }
 
     /// <summary>
