@@ -42,5 +42,20 @@ public static class Arrays
         // Remember: Using comments in your program, write down your process for solving this problem
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
+
+        // Create a function that moves data
+        //      in a list to the right
+        //      by a given amount.
+        // Data that reaches the end of the list
+        //      will wrap around to the start.
+        // Returns a list with data shifted the right
+        //      by a given amount.
+
+        // Save the data at the end of the data list to a new array 'wrap'
+        int[] subArray = data.GetRange(data.Count - amount, amount).ToArray();
+        // Remove the data from the end of the data list
+        data.RemoveRange(data.Count - amount, amount);
+        // Insert the wrap array to the beginning of the data list
+        data.InsertRange(0, subArray);
     }
 }
