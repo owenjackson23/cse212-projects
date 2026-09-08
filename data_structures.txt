@@ -1,0 +1,53 @@
+public class DataStructures
+
+Dynamic Array (List)
+{
+    Implementation Example: 
+        var numbers = new List<int>();
+
+    purpose = An array that does not have a fixed size
+
+    pros = Expandable
+    cons = More memory, slower memory allocation
+
+    commonOperations = [
+        lookup: value = myList[index]
+        append: myList.Add(value)
+        insert: myList.Insert(index, value)
+        remove: myList.Remove(index)
+        size: myList.Count
+        capacity: myList.Capacity
+        empty: myList.Count == 0
+    ]
+}
+
+Stack
+{
+    Implementation Example:
+        var Stack = new Stack<int>; 
+
+    purpose = The stack is used to reverse data
+        + or remember previous data
+        + (including previous results).
+        + It follows a "Last In, First Out" (LIFO) rule
+    
+    pros = remembering previous data,
+        + performing an operation backwards
+    cons = some data may not be used for awhile
+
+    commonOperations = [
+        push: myStack.Push(value)
+            putting something onto the stack
+        pop: var value = myStack.Pop()
+            taking something off of a stack
+        size: var length = myStack.Count
+        empty: if (myStack.Count == 0)
+    ]
+
+    otherDefinitions = [
+        back: the location in a stack where a push and pop occurs.
+            + The last item put into the stack is found in the back.
+        front: the location in a stack where the first item added to the stack can be found.
+            + Traditionally, this is the index 0 of a dynamic array.
+    ]
+}
