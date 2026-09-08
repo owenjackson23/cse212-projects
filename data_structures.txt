@@ -7,8 +7,11 @@ Dynamic Array (List)
 
     purpose = An array that does not have a fixed size
 
-    pros = Expandable
-    cons = More memory, slower memory allocation
+    pros = [Expandable]
+    cons = [
+        More memory,
+        slower memory allocation
+    ]
 
     commonOperations = [
         lookup: value = myList[index]
@@ -21,19 +24,23 @@ Dynamic Array (List)
     ]
 }
 
-Stack
+Stack - "Last In, First Out" (LIFO)
 {
     Implementation Example:
-        var Stack = new Stack<int>; 
+        var Stack = new Stack<int>(); 
 
     purpose = The stack is used to reverse data
         + or remember previous data
         + (including previous results).
         + It follows a "Last In, First Out" (LIFO) rule
     
-    pros = remembering previous data,
-        + performing an operation backwards
-    cons = some data may not be used for awhile
+    pros = [
+        remembering previous data,
+        performing an operation backwards
+    ]
+    cons = [
+        some data may not be used for awhile
+    ]
 
     commonOperations = [
         push: myStack.Push(value)
@@ -49,5 +56,38 @@ Stack
             + The last item put into the stack is found in the back.
         front: the location in a stack where the first item added to the stack can be found.
             + Traditionally, this is the index 0 of a dynamic array.
+    ]
+}
+
+Queue - "First In, First Out" (FIFO)
+{
+    Implementation Example:
+    var q = new Queue<char>();
+
+    purpose = processing requests in a fair and orderly way
+
+    pros = [
+        Web server queues,
+        Reader/Writer queues
+    ]
+    cons = [
+        Harder to work backwards
+    ]
+
+    commonOperations = [
+        enqueue: myQueue.Enqueue(value)
+            add an item to the back of the queue
+        dequeue: var value = myQueue.Dequeue()
+            removes an item from the front of the queue
+        size: myQueue.Count
+        empty: if (myQueue.Count == 0)
+    ]
+
+    otherDefinitions = [
+        back: the location in the queue where an enqueue occurs.
+            + The last item put in the queue is found in the back.
+        front: the location in the queue where a dequeue occurs.
+            + The first item put in the queue is found in the front.
+            + If you use a dynamic array (List) this is index 0.
     ]
 }
