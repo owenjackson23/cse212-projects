@@ -12,7 +12,7 @@
         queue.Enqueue(100);
         var value = queue.Dequeue();
         Console.WriteLine(value);
-        // Defect(s) Found:
+        // Defect(s) Found: The Dequeue method was removing the item at index 1 instead of index 0
 
         Console.WriteLine("------------");
 
@@ -30,7 +30,7 @@
         Console.WriteLine(value);
         value = queue.Dequeue();
         Console.WriteLine(value);
-        // Defect(s) Found: 
+        // Defect(s) Found: The Enqueue method was inserting items at the beginning of the queue, causing the result to be displayed in reverse order
 
         Console.WriteLine("------------");
 
@@ -48,7 +48,7 @@
         {
             Console.WriteLine("I got the exception as expected.");
         }
-        // Defect(s) Found: 
+        // Defect(s) Found: None
     }
 
     private readonly List<int> _queue = new();
@@ -59,7 +59,7 @@
     /// <param name="value">Integer value to add to the queue</param>
     private void Enqueue(int value)
     {
-        _queue.Insert(0, value);
+        _queue.Insert(_queue.Count, value);
     }
 
     /// <summary>
