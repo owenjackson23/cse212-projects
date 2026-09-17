@@ -91,3 +91,52 @@ Queue - "First In, First Out" (FIFO)
             + If you use a dynamic array (List) this is index 0.
     ]
 }
+
+Set
+{
+    Implementation Example:
+    var set1 = new HashSet(){1, 2, 3, 4, 5};
+
+    purpose = 
+
+    pros = [
+        order does not matter,
+        fast performance for adding + removing + finding (testing for membership),
+        quick access to unique results previously calculated,
+        performing mathematical set operations such as an intersection an union
+    ]
+    cons = [
+        does not allow duplicates
+    ]
+
+    commonOperations = [
+        positiveIntHashCode: 3.GetHashCode()
+            returns a hash code of 3
+        negativeIntHashCode: -3.GetHashCode()
+            returns a hash code of -3
+        stringHashCode: "cat".GetHashCode()
+            returns a hash code of -1599535192
+        floatDoubleHashCode: 3.14.GetHashCode()
+            returns a hash code of 300063655
+        boolHashCode: true.GetHashCode()
+            returns a hash code of 1
+        listObjectHashCode: new List<string>() .GetHashCode()
+            returns a hash code of 27252167
+        
+        add: mySet.Add(value)
+        remove: mySet.Remove(value)
+        member: mySet.Contains(value)
+        size: mySet.Count
+    ]
+
+    otherDefinitions = [
+        hashing: the process of mapping an item to an index location using a hashing function
+        hashingFunction: a function that converts the value of an item to a numerical index value.
+            + Includes a modulo operation
+        sparseArray: an array that is only partially filled.
+            + To avoid conflicts in a set, a sparse array must have sufficient empty space to allow for new additions
+        openAddressing: A method of removing conflicts in a set in which a new empty location is found elsewhere in the sparse array.
+        chaining: a method of removing conflicts in a set.
+            + All items that hash to the same index are chained together into a single data structure stored in that target index
+    ]
+}
