@@ -26,13 +26,14 @@
         //     }
         // }
 
-        var foundLetters = new HashSet<char>();
+        var found = new HashSet<char>();
         foreach (char letter in text)
         {
-            if (foundLetters.Contains(letter))
+            if (found.Contains(letter))
             {
                 return false;
             }
+            found.Add(letter);
         }
 
         return true;
