@@ -28,7 +28,7 @@ public class PriorityQueueTests
         priorityQueue.Enqueue(george.Value, george.Priority);
 
         int i = 0;
-        for (int j = (expectedResult.Length - 1); j > 0; j--)
+        for (int j = (expectedResult.Length); j > 0; j--)
         {
 
             var item = priorityQueue.Dequeue();
@@ -79,7 +79,7 @@ public class PriorityQueueTests
         priorityQueue.Enqueue(george.Value, george.Priority);
 
         int i = 0;
-        for (int j = (expectedResult.Length - 1); j > 0; j--)
+        for (int j = (expectedResult.Length); j > 0; j--)
         {
 
             var item = priorityQueue.Dequeue();
@@ -130,7 +130,7 @@ public class PriorityQueueTests
         priorityQueue.Enqueue(george.Value, george.Priority);
 
         int i = 0;
-        for (int j = (expectedResult.Length - 1); j > 0; j--)
+        for (int j = (expectedResult.Length); j > 0; j--)
         {
 
             var item = priorityQueue.Dequeue();
