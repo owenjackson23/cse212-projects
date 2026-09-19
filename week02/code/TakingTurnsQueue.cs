@@ -46,7 +46,7 @@ public class TakingTurnsQueue
                 _people.Enqueue(person);
             }
             // Enqueues the person if their turns are infinite
-            else if (person.Turns == 0)
+            else if (person.Turns <= 0)
             {
                 _people.Enqueue(person);
             }
