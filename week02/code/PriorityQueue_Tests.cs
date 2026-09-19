@@ -62,7 +62,7 @@ public class PriorityQueueTests
     // Scenario: Create a queue in which all items have different priority: Bob (2), Tim (4), Sue (3), George (1) and
     // run until the queue should be empty
     // Expected Result: Tim, Sue, Bob, George
-    // Defect(s) Found: 
+    // Defect(s) Found: None
     public void TestPriorityQueue_DifferentPriority()
     {
         var bob = new PriorityItem("Bob", 2);
@@ -113,7 +113,7 @@ public class PriorityQueueTests
     // Scenario: Create a queue in which all items have varied priority, with some sharing the same priority: Bob (2), Tim (1), Sue (3), George (1) and
     // run until the queue should be empty
     // Expected Result: Sue, Bob, Tim, George
-    // Defect(s) Found: 
+    // Defect(s) Found: None
     public void TestPriorityQueue_VariedPriority()
     {
         var bob = new PriorityItem("Bob", 2);
@@ -163,7 +163,7 @@ public class PriorityQueueTests
     [TestMethod]
     // Scenario: Try to get the next item from an empty queue
     // Expected Result: Exception should be thrown with appropriate error message.
-    // Defect(s) Found: 
+    // Defect(s) Found: None
     public void TestPriorityQueue_EmptyQueue()
     {
         var priorityQueue = new PriorityQueue();
