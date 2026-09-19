@@ -8,7 +8,7 @@ public class PriorityQueueTests
     [TestMethod]
     // Scenario: Create a queue in which all items have the same priority: Bod (1), Tim (1), Sue (1), George (1) and
     // run until the queue is empty
-    // Expected Result: bob, tim, sue, george
+    // Expected Result: Bob, Tim, Sue, George
     // Defect(s) Found: 
     public void TestPriorityQueue_SamePriority()
     {
