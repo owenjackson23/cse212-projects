@@ -25,11 +25,13 @@ public class PriorityQueueTests
         priorityQueue.Enqueue(sue.Value, sue.Priority);
         priorityQueue.Enqueue(george.Value, george.Priority);
 
-        for (int i = expectedResult.Length; i > 0; i--)
+        int i = 0;
+        for (int j = (expectedResult.Length - 1); j > 0; j--)
         {
 
             var item = priorityQueue.Dequeue();
             Assert.AreEqual(expectedResult[i].Value, item);
+            i++;
         }
 
         try
@@ -74,11 +76,13 @@ public class PriorityQueueTests
         priorityQueue.Enqueue(sue.Value, sue.Priority);
         priorityQueue.Enqueue(george.Value, george.Priority);
 
-        for (int i = expectedResult.Length; i > 0; i--)
+        int i = 0;
+        for (int j = (expectedResult.Length - 1); j > 0; j--)
         {
 
             var item = priorityQueue.Dequeue();
             Assert.AreEqual(expectedResult[i].Value, item);
+            i++;
         }
 
         try
@@ -123,11 +127,13 @@ public class PriorityQueueTests
         priorityQueue.Enqueue(sue.Value, sue.Priority);
         priorityQueue.Enqueue(george.Value, george.Priority);
 
-        for (int i = expectedResult.Length; i > 0; i--)
+        int i = 0;
+        for (int j = (expectedResult.Length - 1); j > 0; j--)
         {
 
             var item = priorityQueue.Dequeue();
             Assert.AreEqual(expectedResult[i].Value, item);
+            i++;
         }
 
         try
