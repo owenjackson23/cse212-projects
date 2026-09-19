@@ -103,5 +103,52 @@ public class PriorityQueueTests
         }
     }
 
-    // Add more test cases as needed below.
+    [TestMethod]
+    // Scenario: Create a queue in which all items have varied priority, with some sharing the same priority: Bob (2), Tim (1), Sue (3), George (1) and
+    // run until the queue should be empty
+    // Expected Result: Sue, Bob, Tim, George
+    // Defect(s) Found: 
+    public void TestPriorityQueue_VariedPriority()
+    {
+        var bob = new PriorityItem("Bob", 2);
+        var tim = new PriorityItem("Tim", 1);
+        var sue = new PriorityItem("Sue", 3);
+        var george = new PriorityItem("George", 1);
+
+        PriorityItem[] expectedResult = [sue, bob, tim, george];
+
+        var priorityQueue = new PriorityQueue();
+        priorityQueue.Enqueue(bob.Value, bob.Priority);
+        priorityQueue.Enqueue(tim.Value, tim.Priority);
+        priorityQueue.Enqueue(sue.Value, sue.Priority);
+        priorityQueue.Enqueue(george.Value, george.Priority);
+
+        for (int i = expectedResult.Length; i > 0; i--)
+        {
+
+            var item = priorityQueue.Dequeue();
+            Assert.AreEqual(expectedResult[i].Value, item);
+        }
+
+        try
+        {
+            priorityQueue.Dequeue();
+            Assert.Fail("Exception should have been thrown.");
+        }
+        catch (InvalidOperationException e)
+        {
+            Assert.AreEqual("The queue is empty.", e.Message);
+        }
+        catch (AssertFailedException)
+        {
+            throw;
+        }
+        catch (Exception e)
+        {
+            Assert.Fail(
+                 string.Format("Unexpected exception of type {0} caught: {1}",
+                                e.GetType(), e.Message)
+            );
+        }
+    }
 }
