@@ -9,7 +9,9 @@ public class PriorityQueueTests
     // Scenario: Create a queue in which all items have the same priority: Bob (1), Tim (1), Sue (1), George (1) and
     // run until the queue should be empty
     // Expected Result: Bob, Tim, Sue, George
-    // Defect(s) Found: 
+    // Defect(s) Found:
+    //      The highest priority was set to >= instead of >, so the last value with the same priority was selected instead of the first
+    //      The Dequeue method was not removing the items.
     public void TestPriorityQueue_SamePriority()
     {
         var bob = new PriorityItem("Bob", 1);
