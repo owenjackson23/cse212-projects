@@ -151,4 +151,34 @@ public class PriorityQueueTests
             );
         }
     }
+
+    [TestMethod]
+    // Scenario: Try to get the next item from an empty queue
+    // Expected Result: Exception should be thrown with appropriate error message.
+    // Defect(s) Found: 
+    public void TestPriorityQueue_EmptyQueue()
+    {
+        var priorityQueue = new PriorityQueue();
+
+        try
+        {
+            priorityQueue.Dequeue();
+            Assert.Fail("Exception should have been thrown.");
+        }
+        catch (InvalidOperationException e)
+        {
+            Assert.AreEqual("The queue is empty.", e.Message);
+        }
+        catch (AssertFailedException)
+        {
+            throw;
+        }
+        catch (Exception e)
+        {
+            Assert.Fail(
+                 string.Format("Unexpected exception of type {0} caught: {1}",
+                                e.GetType(), e.Message)
+            );
+        }
+    }
 }
