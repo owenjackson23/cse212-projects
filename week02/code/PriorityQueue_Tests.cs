@@ -6,8 +6,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 public class PriorityQueueTests
 {
     [TestMethod]
-    // Scenario: Create a queue in which all items have the same priority: Bod (1), Tim (1), Sue (1), George (1) and
-    // run until the queue is empty
+    // Scenario: Create a queue in which all items have the same priority: Bob (1), Tim (1), Sue (1), George (1) and
+    // run until the queue should be empty
     // Expected Result: Bob, Tim, Sue, George
     // Defect(s) Found: 
     public void TestPriorityQueue_SamePriority()
@@ -21,6 +21,9 @@ public class PriorityQueueTests
 
         var priorityQueue = new PriorityQueue();
         priorityQueue.Enqueue(bob.Value, bob.Priority);
+        priorityQueue.Enqueue(tim.Value, tim.Priority);
+        priorityQueue.Enqueue(sue.Value, sue.Priority);
+        priorityQueue.Enqueue(george.Value, george.Priority);
 
         for (int i = expectedResult.Length; i > 0; i--)
         {
@@ -52,13 +55,52 @@ public class PriorityQueueTests
     }
 
     [TestMethod]
-    // Scenario: 
-    // Expected Result: 
+    // Scenario: Create a queue in which all items have different priority: Bob (2), Tim (4), Sue (3), George (1) and
+    // run until the queue should be empty
+    // Expected Result: Tim, Sue, Bob, George
     // Defect(s) Found: 
-    public void TestPriorityQueue_2()
+    public void TestPriorityQueue_DifferentPriority()
     {
+        var bob = new PriorityItem("Bob", 2);
+        var tim = new PriorityItem("Tim", 4);
+        var sue = new PriorityItem("Sue", 3);
+        var george = new PriorityItem("George", 1);
+
+        PriorityItem[] expectedResult = [tim, sue, bob, george];
+
         var priorityQueue = new PriorityQueue();
-        Assert.Fail("Implement the test case and then remove this.");
+        priorityQueue.Enqueue(bob.Value, bob.Priority);
+        priorityQueue.Enqueue(tim.Value, tim.Priority);
+        priorityQueue.Enqueue(sue.Value, sue.Priority);
+        priorityQueue.Enqueue(george.Value, george.Priority);
+
+        for (int i = expectedResult.Length; i > 0; i--)
+        {
+
+            var item = priorityQueue.Dequeue();
+            Assert.AreEqual(expectedResult[i].Value, item);
+        }
+
+        try
+        {
+            priorityQueue.Dequeue();
+            Assert.Fail("Exception should have been thrown.");
+        }
+        catch (InvalidOperationException e)
+        {
+            Assert.AreEqual("The queue is empty.", e.Message);
+        }
+        catch (AssertFailedException)
+        {
+            throw;
+        }
+        catch (Exception e)
+        {
+            Assert.Fail(
+                 string.Format("Unexpected exception of type {0} caught: {1}",
+                                e.GetType(), e.Message)
+            );
+        }
     }
 
     // Add more test cases as needed below.
