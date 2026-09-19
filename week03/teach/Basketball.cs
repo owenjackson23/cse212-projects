@@ -38,8 +38,18 @@ public class Basketball
             }
         }
 
-        Console.WriteLine($"Players: {{{string.Join(", ", players)}}}");
+        // Console.WriteLine($"Players: {{{string.Join(", ", players)}}}");
 
-        var topPlayers = new string[10];
+        //var topPlayers = new string[10];
+        var topPlayers = players.ToArray();
+
+        // Sorts the array of top players in descending order
+        Array.Sort(topPlayers, (p1, p2) => p2.Value.CompareTo(p1.Value));
+
+        // int itemsToPrint = 10;
+        // for (int i = 0; i < itemsToPrint; i++)
+        // {
+        //     Console.WriteLine();
+        // }
     }
 }
