@@ -191,7 +191,7 @@ Linked List
     pros = [
         inserting/removing does not require moving items to the end and only affects neighboring elements,
         no need to worry about capacity,
-        you can traverse through a linked list backwards or forwards,
+        you can traverse through a linked list backwards or forwards (in a doubly-linked list),
         better performance than a dynamic array
     ]
     cons = [
@@ -217,13 +217,17 @@ Linked List
     ]
 
     otherDefinitions = [
-        node:
-        value:
-        next:
-        pointer:
-        head:
-        previous:
-        doubly-linkedList:
-        tail:
+        node: the combination of the value and the pointers.
+            + Represents one item in the linked list.
+        value: the actual data stored in the linked list as part of the node
+        pointer: refers to an address in the computer memory.
+            + Also called a reference.
+        next: a pointer in each node of the linked list that points to the next node
+        previous: a pointer in each of the linked list nodes that points to the previous node
+        head: a pointer to the first node in the linked list
+        tail: a pointer to the last node in the linked list
+        doubly-linkedList: a linked list that is bi-directional.
+            + The linked list will maintain both a head and a tail.
+            + To traverse in either direction, the node will have both a pointer to the next node and the previous node
     ]
 }
