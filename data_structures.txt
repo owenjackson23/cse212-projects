@@ -9,8 +9,8 @@ Dynamic Array (List)
 
     pros = [Expandable]
     cons = [
-        More memory,
-        slower memory allocation
+        More memory than fixed arrays,
+        slower memory allocation than fixed arrays,
     ]
 
     commonOperations = [
@@ -188,10 +188,42 @@ Linked List
 
     purpose = 
 
-    pros = []
-    cons = []
+    pros = [
+        inserting/removing does not require moving items to the end and only affects neighboring elements,
+        no need to worry about capacity,
+        you can traverse through a linked list backwards or forwards,
+        better performance than a dynamic array
+    ]
+    cons = [
+        requires a loop to find a specific node
+    ]
 
-    commonOperations = []
+    commonOperations = [
+        insert_head: linkedList.AddFirst(value)
+            adds "value" before the head
+        insert_tail: linkedList.AddLast(value)
+            adds "value" after the tail
+        insert: linedList.AddAfter(node, value)
+            adds "value" after node "node"
+        remove_head: linkedList.RemoveFirst()
+            removes the first item (the head)
+        remove_tail: linkedList.RemoveLast()
+            removes the last item (the tail)
+        remove: linkedList.Remove(node)
+            removes node "node"
+        size: linkedList.Count
+        empty: if (linkedList.Count == 0)
+            returns true if the length of the linked list is zero
+    ]
 
-    otherDefinitions = []
+    otherDefinitions = [
+        node:
+        value:
+        next:
+        pointer:
+        head:
+        previous:
+        doubly-linkedList:
+        tail:
+    ]
 }
