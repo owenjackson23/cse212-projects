@@ -94,8 +94,9 @@ Queue - "First In, First Out" (FIFO)
 
 Set
 {
-    Implementation Example:
+    Implementation Examples:
     var set1 = new HashSet(){1, 2, 3, 4, 5};
+    var found = new HashSet<char>();
 
     purpose = 
 
