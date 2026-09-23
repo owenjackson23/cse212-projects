@@ -148,7 +148,7 @@ Map (AKA HashTable, AKA HashMap, AKA Dictionary)
     var dictionary = new Dictionary<string, double>();
     var dictionary = new Dictionary<string, double>() { { "key1", 2.1 }, { "key2", 2.3 } };
 
-    purpose = 
+    purpose = similar to a set, but uses key-value pairs
 
     pros = [
         quick lookup for finding values
@@ -170,7 +170,14 @@ Map (AKA HashTable, AKA HashMap, AKA Dictionary)
     ]
 
     otherDefinitions = [
-        key:
-        value:
+        key: keys are used to lookup values from the map.
+            + The keys in the map form a set.
+            + Each key is unique.
+        value: the value associated with each key within a map.
+            + Often referred to as key-value pairs.
+        JSON: JavaScript Object Notation.
+            + A format used frequently to share data between software.
+            + JSON data uses maps and lists.
+            + The syntax of JSON is the same as Python.
     ]
 }
