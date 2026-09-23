@@ -141,3 +141,36 @@ Set
             + All items that hash to the same index are chained together into a single data structure stored in that target index
     ]
 }
+
+Map (AKA HashTable, AKA HashMap, AKA Dictionary)
+{
+    Implementation Examples:
+    var dictionary = new Dictionary<string, double>();
+    var dictionary = new Dictionary<string, double>() { { "key1", 2.1 }, { "key2", 2.3 } };
+
+    purpose = 
+
+    pros = [
+        quick lookup for finding values
+    ]
+    cons = []
+
+    commonOperations = [
+        put: myMap.Add(key, value)
+             myMap[key] = value
+            adds (or replaces) a row
+        get: myMap[key]
+            gets the value for the specified key
+        remove: myMap.Remove(key)
+            removes the row from the map containing the specified key
+        member: myMap.ContainsKey(key)
+            determines if "key" is in the map
+        size: myMap.Count
+            returns the number of items in the map
+    ]
+
+    otherDefinitions = [
+        key:
+        value:
+    ]
+}
