@@ -142,7 +142,7 @@ Set
     ]
 }
 
-Map (AKA HashTable, AKA HashMap, AKA Dictionary)
+Map (HashTable, HashMap, or Dictionary)
 {
     Implementation Examples:
     var dictionary = new Dictionary<string, double>();
@@ -180,4 +180,18 @@ Map (AKA HashTable, AKA HashMap, AKA Dictionary)
             + JSON data uses maps and lists.
             + The syntax of JSON is the same as Python.
     ]
+}
+
+Linked List
+{
+    Implementation Examples:
+
+    purpose = 
+
+    pros = []
+    cons = []
+
+    commonOperations = []
+
+    otherDefinitions = []
 }
