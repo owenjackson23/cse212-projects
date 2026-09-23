@@ -30,8 +30,7 @@ Stack - "Last In, First Out" (LIFO)
         var Stack = new Stack<int>(); 
 
     purpose = The stack is used to reverse data
-        + or remember previous data
-        + (including previous results).
+        + or remember previous data (including previous results).
         + It follows a "Last In, First Out" (LIFO) rule
     
     pros = [
@@ -98,7 +97,8 @@ Set
     var set1 = new HashSet(){1, 2, 3, 4, 5};
     var found = new HashSet<char>();
 
-    purpose = 
+    purpose = storing unique values
+        + quickly searching for unique values
 
     pros = [
         order does not matter,
