@@ -35,7 +35,12 @@ public static class SetsAndMaps
             string reversed = ReverseString(word);
             string pair = $"{word} & {reversed}";
             string reversedPair = $"{reversed} & {word}";
-            if (pairsSet.Contains(pair) || pairsSet.Contains(reversedPair))
+
+            if (word == reversed)
+            {
+                continue;
+            }
+            else if (pairsSet.Contains(pair) || pairsSet.Contains(reversedPair))
             {
                 continue;
             }
