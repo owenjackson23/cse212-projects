@@ -33,13 +33,16 @@ public static class SetsAndMaps
         {
             //  Reverse word
             string reversed = ReverseString(word);
-
+            string pair = $"{word} & {reversed}";
+            if (pairsSet.Contains(pair) || pairsSet.Contains(ReverseString(pair)))
+            {
+                continue;
+            }
             //  If the reversed word is in the words set,
             //  add word and reversed word to pairs set
-            if (wordsSet.Contains(reversed))
+            else if (wordsSet.Contains(reversed))
             {
-                pairsSet.Add(word);
-                pairsSet.Add(reversed);
+                pairsSet.Add(pair);
             }
         }
 
