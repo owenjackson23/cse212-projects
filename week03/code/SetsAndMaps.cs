@@ -28,17 +28,33 @@ public static class SetsAndMaps
         // Create words set from 
         var wordsSet = new HashSet<string>(words);
 
-        // Loop through words array
-        //      if word in pairs set,
-        //          continue
-        //      else
-        //          reverse word
-        //          if the reversed word is in the words set
-        //              add word to pairs set
-        //              add reversed word to pairs set
+        // Loop through words array to find pairs
+        foreach (string word in words)
+        {
+            //  Reverse word
+            string reversed = ReverseString(word);
 
-        // Return pairsSet.toArray();
-        return [];
+            //  If the reversed word is in the words set,
+            //  add word and reversed word to pairs set
+            if (wordsSet.Contains(reversed))
+            {
+                pairsSet.Add(word);
+                pairsSet.Add(reversed);
+            }
+        }
+
+        return pairsSet.ToArray();
+    }
+
+    // Reverses a given string
+    public static string ReverseString(string word)
+    {
+        // String to char array
+        char[] letters = word.ToCharArray();
+        // Reverse array
+        Array.Reverse(letters);
+        // Return reversed string
+        return new string(letters);
     }
 
     /// <summary>
