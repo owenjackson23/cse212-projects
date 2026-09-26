@@ -22,6 +22,22 @@ public static class SetsAndMaps
     public static string[] FindPairs(string[] words)
     {
         // TODO Problem 1 - ADD YOUR CODE HERE
+
+        // Create pairs set
+        var pairsSet = new HashSet<string>();
+        // Create words set from 
+        var wordsSet = new HashSet<string>(words);
+
+        // Loop through words array
+        //      if word in pairs set,
+        //          continue
+        //      else
+        //          reverse word
+        //          if the reversed word is in the words set
+        //              add word to pairs set
+        //              add reversed word to pairs set
+
+        // Return pairsSet.toArray();
         return [];
     }
 
