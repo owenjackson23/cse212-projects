@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Formats.Asn1;
+using Microsoft.VisualStudio.TestPlatform.ObjectModel.Client.Payloads;
 
 public class LinkedList : IEnumerable<int>
 {
@@ -245,8 +246,12 @@ public class LinkedList : IEnumerable<int>
     /// </summary>
     public IEnumerable Reverse()
     {
-        // TODO Problem 5
-        yield return 0; // replace this line with the correct yield return statement(s)
+        var curr = _tail; // Start at the end since this is a reverse iteration
+        while (curr is not null)
+        {
+            yield return curr.Data; // Provide each item to the user
+            curr = curr.Prev; // Go backward in the linked list
+        }
     }
 
     public override string ToString()
