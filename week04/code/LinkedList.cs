@@ -195,12 +195,12 @@ public class LinkedList : IEnumerable<int>
         Node? curr = _head;
         while (curr is not null)
         {
-            if (curr == _head)
+            if (curr == _head && curr.Data == oldValue)
             {
                 RemoveHead();
                 InsertHead(newValue);
             }
-            else if (curr == _tail)
+            else if (curr == _tail && curr.Data == oldValue)
             {
                 RemoveTail();
                 InsertTail(newValue);
