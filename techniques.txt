@@ -1,0 +1,39 @@
+Recursion
+{
+    definition = the calling of a function with the same function
+
+    ImplementationExample:
+    public int Factorial(int n)
+    {
+        if (n <= 1)
+        {
+            // 1! = 1 (no recursion)
+            return 1;
+        }
+        else
+        {
+            // n! = n * (n - 1)!
+            return (n * Factorial(n - 1));
+        }
+    }
+
+    purpose = Solves problems by solving smaller and smaller versions of the problem
+
+    pros = [
+        simple solutions to many complex problems
+    ]
+    cons = [
+        can cause a Stack overflow if not implemented properly,
+        can result in worse performance if used inappropriately
+    ]
+
+    rules = [
+        getSmallerProblem: each recursive call must be a for a smaller version of the problem,
+        getBaseCase: must have a base case in which recursion is not used
+    ]
+
+    otherDefinitions = [
+        baseCase: the scenario that will stop the recursive calls
+        memoization: the technique of remembering previous results found through recursion so that repetitive recursion can be avoided
+    ]
+}
