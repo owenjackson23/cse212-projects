@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Formats.Asn1;
 
 public class LinkedList : IEnumerable<int>
 {
@@ -137,6 +138,51 @@ public class LinkedList : IEnumerable<int>
     public void Remove(int value)
     {
         // TODO Problem 3
+        // If the list has only one item in it, then set head and tail 
+        // to null resulting in an empty list.  This condition will also
+        // cover an empty list.  Its okay to set to null again.
+        if (_head == _tail)
+        {
+            _head = null;
+            _tail = null;
+        }
+        // If the list has more than one item in it, then only the head
+        // will be affected.
+        else if (_head is not null)
+        {
+            // Search for the node that matches 'value' by starting at the 
+            // head of the list.
+            Node? curr = _head;
+            while (curr is not null)
+            {
+                if (curr.Data == value)
+                {
+                    // If the location of 'value' is at the beginning of the list,
+                    // then we can call RemoveHead to remove the node
+                    if (curr == _head)
+                    {
+                        RemoveHead();
+                    }
+                    // If the location of 'value' is at the end of the list,
+                    // then we can call RemoveTail to remove the node
+                    else if (curr == _tail)
+                    {
+                        RemoveTail();
+                    }
+                    // For any other location of 'value', need to create a 
+                    // new node and reconnect the links to insert.
+                    else
+                    {
+                        curr.Prev!.Next = curr.Next; // Disconnect the previous node from the current node
+                        curr.Next!.Prev = curr.Prev; // Disconnect the next node from the current node
+                    }
+
+                    return; // We can exit the function after we remove the node
+                }
+
+                curr = curr.Next; // Go to the next node to search for 'value'
+            }
+        }
     }
 
     /// <summary>
