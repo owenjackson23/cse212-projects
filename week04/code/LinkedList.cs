@@ -190,7 +190,22 @@ public class LinkedList : IEnumerable<int>
     /// </summary>
     public void Replace(int oldValue, int newValue)
     {
-        // TODO Problem 4
+        // Search for nodes that match 'oldValue' by starting at the 
+        // head of the list.
+        Node? curr = _head;
+        while (curr is not null)
+        {
+            if (curr.Data == oldValue)
+            {
+                Node newNode = new(newValue);
+                newNode.Prev = curr.Prev; // Connect new node to the node previous to 'oldValue'
+                newNode.Next = curr.Next; // Connect new node to the node after 'oldValue'
+                curr.Prev!.Next = newNode; // Connect the node previous to 'oldValue' to new node
+                curr.Next!.Prev = newNode; // Connect the node after 'oldValue' to the new node
+            }
+
+            curr = curr.Next; // Go to the next node to search for 'value'
+        }
     }
 
     /// <summary>
