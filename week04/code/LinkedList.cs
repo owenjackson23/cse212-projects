@@ -195,7 +195,17 @@ public class LinkedList : IEnumerable<int>
         Node? curr = _head;
         while (curr is not null)
         {
-            if (curr.Data == oldValue)
+            if (curr == _head)
+            {
+                RemoveHead();
+                InsertHead(newValue);
+            }
+            else if (curr == _tail)
+            {
+                RemoveTail();
+                InsertTail(newValue);
+            }
+            else if (curr.Data == oldValue)
             {
                 Node newNode = new(newValue);
                 newNode.Prev = curr.Prev; // Connect new node to the node previous to 'oldValue'
