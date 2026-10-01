@@ -45,17 +45,17 @@ public static class Recursion
     /// </summary>
     public static List<string> PermutationsChoose(List<string> results, string letters, int size, string word = "")
     {
-        if (letters.Length == 0)
+        if (size == 0)
         {
             results.Add(word);
         }
         else
         {
-            for (int i = 0; i < size; i++)
+            for (int i = 0; i < letters.Length; i++)
             {
                 var lettersLeft = letters.Remove(i, 1);
 
-                PermutationsChoose(results, lettersLeft, size, word + letters[i]);
+                PermutationsChoose(results, lettersLeft, size - 1, word + letters[i]);
             }
         }
 
