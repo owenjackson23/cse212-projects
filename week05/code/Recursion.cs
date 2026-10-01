@@ -43,9 +43,23 @@ public static class Recursion
     /// You can assume that the size specified is always valid (between 1 
     /// and the length of the letters list).
     /// </summary>
-    public static void PermutationsChoose(List<string> results, string letters, int size, string word = "")
+    public static List<string> PermutationsChoose(List<string> results, string letters, int size, string word = "")
     {
-        // TODO Start Problem 2
+        if (letters.Length == 0)
+        {
+            results.Add(word);
+        }
+        else
+        {
+            for (int i = 0; i < size; i++)
+            {
+                var lettersLeft = letters.Remove(i, 1);
+
+                PermutationsChoose(results, lettersLeft, size, word + letters[i]);
+            }
+        }
+
+        return results;
     }
 
     /// <summary>
