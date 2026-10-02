@@ -121,7 +121,6 @@ public static class Recursion
         if (s == 3)
             return 4;
 
-        // TODO Start Problem 3
         else if (remember.ContainsKey(s))
         {
             return remember[s];
