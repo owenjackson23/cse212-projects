@@ -187,27 +187,29 @@ public static class Recursion
             results.Add(currPath.AsString());
         }
 
-        else
+        else if (maze.IsValidMove(currPath, x, y) || (x == 0 && y == 0))
         {
-            if (maze.IsValidMove(currPath, x, y) || (x == 0 && y == 0))
-            {
-                currPath.Add((x + 1, y));
-                SolveMaze(results, maze, x + 1, y, currPath);
+            currPath.Add((x + 1, y));
+            SolveMaze(results, maze, x + 1, y, currPath);
 
+            currPath.Add((x, y + 1));
+            SolveMaze(results, maze, x, y + 1, currPath);
+
+            if (x > 0)
+            {
                 currPath.Add((x - 1, y));
                 SolveMaze(results, maze, x - 1, y, currPath);
-
-                currPath.Add((x, y + 1));
-                SolveMaze(results, maze, x, y + 1, currPath);
-
+            }
+            if (y > 0)
+            {
                 currPath.Add((x, y - 1));
                 SolveMaze(results, maze, x, y - 1, currPath);
             }
+        }
 
-            else
-            {
-                currPath.Remove((x, y));
-            }
+        else
+        {
+            currPath.Remove((x, y));
         }
 
         // results.Add(currPath.AsString()); // Use this to add your path to the results array keeping track of complete maze solutions when you find the solution.
