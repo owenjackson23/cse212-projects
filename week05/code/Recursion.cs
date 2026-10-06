@@ -182,7 +182,33 @@ public static class Recursion
         // currPath.Add((1,2)); // Use this syntax to add to the current path
 
         // TODO Start Problem 5
-        // ADD CODE HERE
+        if (maze.IsEnd(x, y))
+        {
+            results.Add(currPath.AsString());
+        }
+
+        else
+        {
+            if (maze.IsValidMove(currPath, x, y) || (x == 0 && y == 0))
+            {
+                currPath.Add((x + 1, y));
+                SolveMaze(results, maze, x + 1, y, currPath);
+
+                currPath.Add((x - 1, y));
+                SolveMaze(results, maze, x - 1, y, currPath);
+
+                currPath.Add((x, y + 1));
+                SolveMaze(results, maze, x, y + 1, currPath);
+
+                currPath.Add((x, y - 1));
+                SolveMaze(results, maze, x, y - 1, currPath);
+            }
+
+            else
+            {
+                currPath.Remove((x, y));
+            }
+        }
 
         // results.Add(currPath.AsString()); // Use this to add your path to the results array keeping track of complete maze solutions when you find the solution.
     }
