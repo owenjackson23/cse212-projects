@@ -154,8 +154,10 @@ public static class Recursion
 
         else
         {
+            // Find the first * in the pattern
             int index = pattern.IndexOf('*');
 
+            // Replace the * with a 0 or a 1
             string patternZero = pattern[..index] + "0" + pattern[(index + 1)..];
             string patternOne = pattern[..index] + "1" + pattern[(index + 1)..];
 
