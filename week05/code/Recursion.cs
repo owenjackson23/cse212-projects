@@ -185,6 +185,7 @@ public static class Recursion
         if (maze.IsEnd(x, y))
         {
             results.Add(currPath.AsString());
+            currPath.Clear();
         }
 
         else if (maze.IsValidMove(currPath, x, y) || (x == 0 && y == 0))
