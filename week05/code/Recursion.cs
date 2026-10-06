@@ -189,20 +189,22 @@ public static class Recursion
 
         else if (maze.IsValidMove(currPath, x, y) || (x == 0 && y == 0))
         {
-            currPath.Add((x + 1, y));
-            SolveMaze(results, maze, x + 1, y, currPath);
+            currPath.Add((x, y));
 
-            currPath.Add((x, y + 1));
-            SolveMaze(results, maze, x, y + 1, currPath);
-
-            if (x > 0)
+            if (maze.IsValidMove(currPath, x + 1, y))
             {
-                currPath.Add((x - 1, y));
+                SolveMaze(results, maze, x + 1, y, currPath);
+            }
+            if (maze.IsValidMove(currPath, x, y + 1))
+            {
+                SolveMaze(results, maze, x, y + 1, currPath);
+            }
+            if (x > 0 && maze.IsValidMove(currPath, x - 1, y))
+            {
                 SolveMaze(results, maze, x - 1, y, currPath);
             }
-            if (y > 0)
+            if (y > 0 && maze.IsValidMove(currPath, x, y - 1))
             {
-                currPath.Add((x, y - 1));
                 SolveMaze(results, maze, x, y - 1, currPath);
             }
         }
