@@ -177,10 +177,10 @@ public static class Recursion
         if (currPath == null)
         {
             currPath = new List<ValueTuple<int, int>>();
-            currPath.Add((0, 0));
         }
 
         // currPath.Add((1,2)); // Use this syntax to add to the current path
+        currPath.Add((x, y));
 
         // TODO Start Problem 5
         if (maze.IsEnd(x, y))
@@ -192,22 +192,22 @@ public static class Recursion
 
         else
         {
-            if (maze.IsValidMove(currPath, x + 1, y))
+            if (maze.IsValidMove(currPath, x + 1, y) && currPath[0] == (0, 0))
             {
                 currPath.Add((x + 1, y));
                 SolveMaze(results, maze, x + 1, y, currPath);
             }
-            if (maze.IsValidMove(currPath, x, y + 1))
+            if (maze.IsValidMove(currPath, x, y + 1) && currPath[0] == (0, 0))
             {
                 currPath.Add((x, y + 1));
                 SolveMaze(results, maze, x, y + 1, currPath);
             }
-            if (x > 0 && maze.IsValidMove(currPath, x - 1, y))
+            if (x > 0 && maze.IsValidMove(currPath, x - 1, y) && currPath[0] == (0, 0))
             {
                 currPath.Add((x - 1, y));
                 SolveMaze(results, maze, x - 1, y, currPath);
             }
-            if (y > 0 && maze.IsValidMove(currPath, x, y - 1))
+            if (y > 0 && maze.IsValidMove(currPath, x, y - 1) && currPath[0] == (0, 0))
             {
                 currPath.Add((x, y - 1));
                 SolveMaze(results, maze, x, y - 1, currPath);
