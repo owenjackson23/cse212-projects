@@ -186,6 +186,7 @@ public static class Recursion
         if (maze.IsEnd(x, y))
         {
             results.Add(currPath.AsString());
+            currPath.Clear();
             currPath = null;
         }
 
