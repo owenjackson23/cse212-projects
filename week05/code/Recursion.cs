@@ -194,22 +194,18 @@ public static class Recursion
         {
             if (maze.IsValidMove(currPath, x + 1, y) && currPath[0] == (0, 0))
             {
-                currPath.Add((x + 1, y));
                 SolveMaze(results, maze, x + 1, y, currPath);
             }
             if (maze.IsValidMove(currPath, x, y + 1) && currPath[0] == (0, 0))
             {
-                currPath.Add((x, y + 1));
                 SolveMaze(results, maze, x, y + 1, currPath);
             }
             if (x > 0 && maze.IsValidMove(currPath, x - 1, y) && currPath[0] == (0, 0))
             {
-                currPath.Add((x - 1, y));
                 SolveMaze(results, maze, x - 1, y, currPath);
             }
             if (y > 0 && maze.IsValidMove(currPath, x, y - 1) && currPath[0] == (0, 0))
             {
-                currPath.Add((x, y - 1));
                 SolveMaze(results, maze, x, y - 1, currPath);
             }
         }
