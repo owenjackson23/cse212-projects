@@ -177,6 +177,7 @@ public static class Recursion
         if (currPath == null)
         {
             currPath = new List<ValueTuple<int, int>>();
+            currPath.Add((0, 0));
         }
 
         // currPath.Add((1,2)); // Use this syntax to add to the current path
@@ -185,27 +186,29 @@ public static class Recursion
         if (maze.IsEnd(x, y))
         {
             results.Add(currPath.AsString());
-            currPath.Clear();
+            currPath = null;
         }
 
         else if (maze.IsValidMove(currPath, x, y) || (x == 0 && y == 0))
         {
-            currPath.Add((x, y));
-
             if (maze.IsValidMove(currPath, x + 1, y))
             {
+                currPath.Add((x, y));
                 SolveMaze(results, maze, x + 1, y, currPath);
             }
             if (maze.IsValidMove(currPath, x, y + 1))
             {
+                currPath.Add((x, y));
                 SolveMaze(results, maze, x, y + 1, currPath);
             }
             if (x > 0 && maze.IsValidMove(currPath, x - 1, y))
             {
+                currPath.Add((x, y));
                 SolveMaze(results, maze, x - 1, y, currPath);
             }
             if (y > 0 && maze.IsValidMove(currPath, x, y - 1))
             {
+                currPath.Add((x, y));
                 SolveMaze(results, maze, x, y - 1, currPath);
             }
         }
