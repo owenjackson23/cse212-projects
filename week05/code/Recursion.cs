@@ -189,7 +189,7 @@ public static class Recursion
             currPath = null;
         }
 
-        else if (maze.IsValidMove(currPath, x, y) || (x == 0 && y == 0))
+        else
         {
             if (maze.IsValidMove(currPath, x + 1, y))
             {
@@ -211,11 +211,6 @@ public static class Recursion
                 currPath.Add((x, y - 1));
                 SolveMaze(results, maze, x, y - 1, currPath);
             }
-        }
-
-        else
-        {
-            currPath.Remove((x, y));
         }
 
         // results.Add(currPath.AsString()); // Use this to add your path to the results array keeping track of complete maze solutions when you find the solution.
