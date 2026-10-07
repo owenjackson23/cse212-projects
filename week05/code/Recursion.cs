@@ -186,8 +186,6 @@ public static class Recursion
         if (maze.IsEnd(x, y))
         {
             results.Add(currPath.AsString());
-            currPath.Clear();
-            currPath = null;
         }
 
         else
@@ -209,6 +207,8 @@ public static class Recursion
                 SolveMaze(results, maze, x, y - 1, currPath);
             }
         }
+
+        currPath.RemoveAt(currPath.Count - 1);
 
         // results.Add(currPath.AsString()); // Use this to add your path to the results array keeping track of complete maze solutions when you find the solution.
     }
