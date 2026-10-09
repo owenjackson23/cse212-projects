@@ -11,8 +11,6 @@ public class Node
 
     public void Insert(int value)
     {
-        // TODO Start Problem 1
-
         if (value < Data)
         {
             // Insert to the left
@@ -21,7 +19,7 @@ public class Node
             else
                 Left.Insert(value);
         }
-        else // else if (value > Data)
+        else if (value > Data)
         {
             // Insert to the right
             if (Right is null)
