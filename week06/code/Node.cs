@@ -31,22 +31,18 @@ public class Node
 
     public bool Contains(int value)
     {
-        // TODO Start Problem 2
-        // if (value == Data)
-        //     return true;
-        // else if (value < Data)
-        //     if (Left is null)
-        //         return false;
-        //     else
-        //         return Left.Contains(value);
-        // else
-        //     if (Right is null)
-        //         return false;
-        //     else
-        //         return Right.Contains(value);
-
-        // Remove this line once the method is implemented
-        return false;
+        if (value == Data)
+            return true;
+        else if (value < Data)
+            if (Left is null)
+                return false;
+            else
+                return Left.Contains(value);
+        else
+            if (Right is null)
+                return false;
+            else
+                return Right.Contains(value);
     }
 
     public int GetHeight()
